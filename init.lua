@@ -1038,3 +1038,17 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+---- Function to toggle between dark and light themes
+local function toggle_theme()
+  local current = vim.g.colors_name -- get current colorscheme
+
+  if current == 'tokyonight-night' or current == 'tokyonight-storm' or current == 'tokyonight-moon' then
+    vim.cmd.colorscheme 'tokyonight-day' -- switch to light theme
+  else
+    vim.cmd.colorscheme 'tokyonight-night' -- switch back to dark theme
+  end
+end
+
+-- Map it to a keybinding, e.g. <leader>ut (u = ui, t = theme)
+vim.keymap.set('n', '<leader>ut', toggle_theme, { desc = 'Toggle theme (light/dark)' })
