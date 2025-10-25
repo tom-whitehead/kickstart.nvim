@@ -2,7 +2,6 @@ local modules = {
   'plugins.colorscheme',
   'plugins.editor',
   'plugins.telescope',
-  'plugins.lsp',
   'plugins.formatting',
   'plugins.completion',
   'plugins.treesitter',
@@ -12,6 +11,9 @@ local modules = {
   'plugins.copilot',
   'plugins.snacks',
   'plugins.dap',
+  'plugins.lazydev',
+  -- LSP setup moved to its own folder
+  'lsp.core',
 }
 
 local specs = {}
